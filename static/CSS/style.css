@@ -1,19 +1,24 @@
 /* :root - Selector especial utilizado para definir variables personalizadas de CSS que se pueden reutilizar en todo el documento. */
 :root {
     --bg-color: #181419;
+    --bg-color1:#0d01ad;
+    --bg-color2:#2e0239;
     /* Color de fondo */
     --primary-color: #9f3647;
     --secondary-color: #ffc098;
-    --third-color: #db4648;
-    --third-bis-color: #db4648f2;
+    --third-color: #d5ea39;
+    --third-bis-color: #ffff52f2;
     --bg-input-color: #4f31572c;
+    /*color de letras*/
+    --bg-color3: #ffffff;
 }
-
-/* Selector de etiqueta para body donde aplica color de fondo. */
 body {
-    background-color: var(--bg-color);
+    background-color: #D3D3D3;
 }
 
+.nav-links li {
+    list-style-type: none;
+}
 
 /* Selector Universal */
 * {
@@ -29,11 +34,35 @@ a {
 }
 
 /* Agregar color y tamaño de fuente a la etiqueta <h2></h2> */
+@keyframes titulo-animado {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
 h2 {
-    color: #FFF;
-    font-size: 2vw;
+    color: #000000;
+    font-size: 1vw;
+    animation:titulo-animado 6s ease-in-out infinite;
+    animation-delay: 3s;
+}
+.h2{
+    color: #000000;
+    font-size: 0.*9vw;
+    animation:titulo-animado 12s ease-in-out infinite;
+    animation-delay: 6s;
+
 }
 
+
+
+h3 {
+    color: #000000;
+    font-size: 0.7vw;
+    margin: 30px;
+    border-bottom: 1px solid #89a32b; /* Cambia el color según tu preferencia */
+    padding-bottom: 2px; /* Ajusta el espacio entre el texto y la línea */
+    
+    
+}
 /* Selector de id llamado logo para resaltar el texto en negrita */
 #logo {
     font-weight: bold;
@@ -73,17 +102,14 @@ h2 {
     }
 }
 
-
-
-
 /* Selector por id que identifica la sección del banner. */
 #banner {
-    background-image: url('../img/banner-bg.jpg');
+    background-image: url('../img/imagen-celulares-banner.jpg');
     background-size: cover;
     /* determina cómo se ajusta el tamaño de la imagen de fondo para cubrir completamente el contenedor */
     background-position: center;
     /* coloca la imagen en el centro tanto horizontal como vertical del elemento contenedor */
-    height: 600px;
+    height: 330px;
     box-shadow: inset 0 0 0 2000px rgba(84, 84, 84, 0.5);
     /* establece una sombra interna actúa como un filtro. */
 }
@@ -91,7 +117,7 @@ h2 {
 
 /* Selector id para la sección de Top Rated, películas más top */
 #top-rated {
-    margin: 50px 0px;
+    margin: 15px 0px;
 }
 
 /* Estilos para los id #popular y #top rated */
@@ -102,17 +128,17 @@ h2 {
 
 #popular h2,
 #top-rated h2 {
-    margin: 50px 0px;
+    margin: 30px 0px;
 }
-
 
 /* Estilo para el footer */
 #footer a {
-    color: white;
+    color: rgb(0, 0, 0) !important;
     cursor: pointer;
     font-size: 14px;
-    padding-left: 30px;
+    padding-left: 20px;
     text-decoration: none;
+    
 }
 
 /* Estilo para el footer para cuando se pasa el mouse */
@@ -122,10 +148,34 @@ h2 {
 }
 
 
+/* Estilo para el footer */
+#footer{
+    display: flex;
+    align-items: center;
+    background-color: var(--third-color);
+    height: 100px;
+    width: 100%;
+   
+}
+
+/* Estilo para Search */
+#search{
+    height: 100px;
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin:0%;
+    margin-left: 330px; 
+    padding: opx; 
+
+}
+
 /* Estilo para la barra de búsqueda */
 .search-title {
     color: white;
-    font-size: 3vw;
+    font-size: 1.2vw;
 }
 
 .movie-item-img {
@@ -142,9 +192,9 @@ h2 {
     background-color: var(--third-color);
 }
 
-
 /* Modificaremos el color de fondo, color de fuente, posición del encabezado, ancho y profundidad. */
 .header {
+    /* display: flex; */
     background-color: transparent;
     color: #FFF;
     position: fixed;
@@ -158,22 +208,20 @@ h2 {
 
 /* Estilos para el botón. */
 .btn-cac {
-    background-color: var(--primary-color);
+    background-color: var(--third-color);
     padding: 10px;
     /* Se aplica un espacio de 10 píxeles a los cuatro lados (arriba, abajo, izquierda y derecha) del elemento. */
     border-radius: 10px;
     /* Se establece un radio de curvatura de 10 píxeles para las esquinas del elemento. */
-    color: #FFF;
+    color: #0a0808;
     cursor: pointer;
 }
-
 
 /* Clase Container */
 .container {
     max-width: 1200px;
     margin: 120px auto;
 }
-
 
 /* Estilo para la tarjeta del banner */
 .card-banner {
@@ -184,13 +232,12 @@ h2 {
     /* Aplica un relleno de cero píxeles en la parte superior e inferior del elemento y un relleno de 160 píxeles en los lados izquierdo y derecho. */
 }
 
-
 /* Estilo para la barra de búsqueda */
 .input-search {
-    background-color: var(--bg-input-color);
-    border: 2px solid white;
-    border-radius: 25px;
-    color: white;
+    background-color: whitesmoke;
+    border: 2px solid var(--third-bis-color);
+    border-radius: 15px;
+    color: var(--bg-color3);
     font-size: 16px;
     height: 50px;
     margin: 20px 0px;
@@ -200,7 +247,6 @@ h2 {
     width: 70%;
     font-family: 'Nunito', sans-serif;
 }
-
 
 /* Estilo para el detalle de los ítems */
 .movie-item-detail {
@@ -223,18 +269,17 @@ h2 {
 
 /* Estilo para el título de las películas */
 .movie-item-detail-title {
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 5px 0px 0px 0px;
     line-height: 1.2em;
 }
 
 /* Estilo para el subtítulo de las películas */
 .movie-item-detail-subtitle {
-    color: white;
-    font-size: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
     margin: 3px 0px;
 }
-
 
 /* Estilo para Las más aclamadas */
 .wrapper {
@@ -249,7 +294,6 @@ h2 {
     /* Se oculta el contenido que sobresale más allá de los límites del contenedor. */
 }
 
-
 /* Estilo para las imágenes de Las más aclamadas */
 .movie-item-img-v2 {
     width: 100%;
@@ -260,28 +304,11 @@ h2 {
     /* Para que se pueda visualizar en Ópera */
 }
 
-/* Estilo para el detalle de Las más aclamadas */
-.movie-item-detail-v2 {
-    align-items: center;
+.nav-links{
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    gap: 100px;
+    justify-content: flex-end !important;
 }
-
-/* Estilo para el título de Las más aclamadas */
-.movie-item-detail-title-v2 {
-    color: white;
-    font-weight: bold;
-    margin: 5px 0px 0px 0px;
-}
-
-/* Estilo para el subtítulo de Las más aclamadas */
-.movie-item-detail-subtitle-v2 {
-    color: white;
-    font-size: 12px;
-    margin: 3px 0px;
-}
-
 
 /* Estilo para los hipervínculos del menú */
 .nav-links a {
@@ -299,7 +326,6 @@ h2 {
     color: var(--secondary-color) !important;
     border: 2px solid var(--secondary-color);
 }
-
 
 /* Estilos con selectores descendientes para las etiquetas de título y subtítulo del banner */
 .card-banner h1 {
@@ -342,7 +368,6 @@ h2 {
     content: '🌟';
 }
 
-
 /* Estilo para cambiar el color de las películas que se muestran en Top Rated */
 .movie-item-detail-title-v2:hover {
     color: var(--primary-color);
@@ -352,7 +377,162 @@ h2 {
 .movie-item-detail-subtitle-v2::after {
     content: '🌟';
 }
+.grid-container {
+    display: grid;
+}
+.ofertas-container{
+    display: grid;
+}
+#of h2{
+    text-align: center;
+}
+#footer a {
+    text-decoration: none;
+    color: inherit;
+    
+}
 
+#footer i {
+    margin-right: 5px;
+}
 
+/* Media Queries para dispositivos */
+/* css para un disp de escritotio*/
+@media only screen and (min-width: 1024px) {
+    /* Selector de etiqueta para body donde aplica color de fondo. */
 
+    .grid-container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .ofertas-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+    }
+    #footer{
+        gap: 220px;
+    }
+    .mitad1{
+        grid-template-columns: 1fr ;
+    }
+}
 
+/* para tablets */
+@media screen and (min-width: 601px) and (max-width: 1023px) {
+    body{
+        background-color: #ACACAC;
+    } 
+    h2 {
+        font-size: 2vw;
+    }
+    h3 {
+        font-size: 1.5vw;
+    }
+
+    .login-text {
+        display: none;
+        
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    #banner {
+        height: 400px;
+    }
+
+    #search {
+        height: 100px;
+        margin-left: 150px; 
+    }
+
+    .container {
+        max-width: 720px;
+    }
+
+    .card-banner {
+        padding: 0px 75px;
+    }
+
+    #footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .ofertas-container{
+        grid-template-columns: 1fr 1fr 1fr;
+      
+    }
+}
+
+/* CELULARES */
+@media screen and (min-width: 100px) and (max-width: 600px) {
+    body{
+        background-color: #878787;
+ }
+    h2 {
+        font-size: 3vw;
+    }
+    h3 {
+        font-size: 2vw;
+    }
+
+    .h2-subtitle {
+        font-size: 5vw;
+    }
+
+    .login-text {
+        display: none;
+    }
+
+    .logo-text {
+        display: none;
+    }
+
+    #banner {
+        height: 300px;
+    }
+
+    #search {
+        height: 100px;
+        margin-left: 55px; 
+        
+    }
+
+    .container {
+        max-width: 420px;
+    }
+
+    .card-banner {
+        padding: 0px 50px;
+    }
+
+    .btn-cac {
+        font-size: 1vh;
+    }
+
+    #footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #footer a {
+        padding: 2px 0px;
+    }
+    .grid-container{
+        grid-template-columns: 1fr;
+    }
+    .grid-container{
+        grid-template-columns: 1fr;
+
+    }
+    #footer {
+        flex-direction: row;
+        gap:20px;
+        
+    }
+    
+}
